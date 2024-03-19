@@ -27,21 +27,21 @@ T0-D0
 14. memchr
 15. memcmp
 
-B) Additional (1/11)
+B) Additional (2/11)
 DONE
 01. putchar_fd
+02. putnbr_fd
 
 T0-D0
 01. putstr_fd
-02. putnbr_fd
-03. putendl_fd
-04. substr
-05. strjoin
-06. strtrim
-07. itoa
-08. SPLIT
-09. strmapi
-10. striteri
+02. putendl_fd
+03. substr
+04. strjoin
+05. strtrim
+06. itoa
+07. SPLIT
+08. strmapi
+09. striteri
 
 c) Bonus (0/9)
 T0-D0
