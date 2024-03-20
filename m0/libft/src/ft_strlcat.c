@@ -1,31 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 19:20:49 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/02/23 19:21:08 by bryaloo          ###   ########.fr       */
+/*   Created: 2024/03/20 15:38:37 by bryaloo           #+#    #+#             */
+/*   Updated: 2024/03/20 15:38:41 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+size_t    ft_strlcat(char *dest, const char *src, size_t size)
 {
+	size_t	dest_len;
+	size_t	src_len;
 	size_t	i;
 
-	if (n == 0)
-		return (0);
+	dest_len = 0;
+	src_len = 0;
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && i < n - 1)
+
+	while (dest[dest_len] != '\0')
+		dest_len++;
+	while (src[src_len] != '\0')
+		src_len++;
+	if (size <= dest_len)
+		return size + src_len;
+	while (src[i] != '\0' && dest_len + i < size - 1)
+	{
+		dest[dest_len + i] = src[i];
 		i++;
-	if (s1[i] == s2[i])
-		return (0);
-	else
-		return (s1[i] - s2[i]);
+	}
+	dest[dest_len + i] = '\0';
+	return dest_len + src_len;
 }
 /*
-	create main function to test
+	check code and create main function to test
 */
