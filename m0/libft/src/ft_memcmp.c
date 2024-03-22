@@ -1,51 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 19:22:49 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/02/23 19:23:30 by bryaloo          ###   ########.fr       */
+/*   Created: 2024/03/22 15:10:09 by bryaloo           #+#    #+#             */
+/*   Updated: 2024/03/22 15:10:40 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strcpy(char *dest, char *src)
+int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+    while (n--)
+    {
+        if (*(unsigned char *)s1 != *(unsigned char *)s2)
+            return (*(unsigned char *)s1 - *(unsigned char *)s2);
+        s1 = (unsigned char *)s1 + 1;
+        s2 = (unsigned char *)s2 + 1;
+    }
+    return (0);
 }
-
-char	*ft_strdup(const char *src)
-{
-	size_t	i;
-	char			*dest;
-
-	i = ft_strlen(src);
-	dest = (char *)malloc(sizeof(char) * i);
-	if (!(dest))
-		return (NULL);
-	return (ft_strcpy(dest, src));
-}
-
 /*
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
+	create main function to test
 */
