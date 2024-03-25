@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+static size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -24,53 +22,34 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_str_create(int size, char **strs, char *sep)
+static char	*str_create(size_t n)
+{
+	char	*s;
+
+	s = (char *)malloc(sizeof(char) *(n + 1));
+	if (!s)
+		return (NULL);
+	return (str);
+}
+
+char	*ft_strjoin(char const *s1, char const *s2);
 {
 	char	*str;
-	int		len;
-	int		i;
+	char	*ptr;
 
-	len = 0;
-	i = 0;
-	while (i < size)
-	{
-		len += ft_strlen(strs[i]);
-		i++;
-	}
-	len += ft_strlen(sep) * (size - 1);
-	if (size <= 0)
-		len = 1;
-	str = (char *)malloc(sizeof(char) * len);
+	if (!s1 || !s2)
+		return (NULL);
+	str = str_create(str_len(s1) + ft_strlen(s2));
 	if (!str)
-		return (0);
-	return (str);
+		return (NULL);
+	ptr = str;
+	while (*s1)
+		*str++ = *s1++;
+	while (*s2)
+		*str++ = *s2++;
+	*str = '\0';
+	return (ptr);
 }
-
-char	*ft_strjoin(int size, char **strs, char *sep)
-{
-	int		x;
-	int		y;
-	int		z;
-	char	*str;
-
-	str = ft_str_create(size, strs, sep);
-	x = -1;
-	z = 0;
-	while (++x < size)
-	{
-		y = 0;
-		while (strs[x][y])
-		{
-			str[z++] = strs[x][y];
-			y++;
-		}
-		y = 0;
-		while (sep[y] && x != size - 1)
-		{
-			str[z++] = sep[y];
-			y++;
-		}
-	}
-	str[z] = '\0';
-	return (str);
-}
+/*
+	create main function to test
+*/

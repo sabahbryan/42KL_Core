@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/23 18:56:03 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/02/23 18:56:46 by bryaloo          ###   ########.fr       */
+/*   Created: 2024/03/25 17:06:59 by bryaloo           #+#    #+#             */
+/*   Updated: 2024/03/25 17:07:48 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+
+char	*ft_itoa(int n);
+{
+
 }
-/*
-	create main function to test
-*/
